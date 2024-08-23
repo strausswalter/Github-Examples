@@ -1,0 +1,11 @@
+# Roda a cada 1 minuto, escrevendo a hora atual (do agent / runner) no log de execução da pipeline
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo current time
+        run: echo "The current server time is $(date)"
